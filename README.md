@@ -74,7 +74,7 @@ async def send_request():
     async with httpx.AsyncClient() as client:
         while True:
             sr_no = input("Enter SR number: ")
-            response = await client.post("http://10.106.39.168:65001/process", json={"sr_number": sr_no})
+            response = await client.post("http://10.10.0.0:65001/process", json={"sr_number": sr_no})
             print(response.json())
 
 asyncio.run(send_request())
